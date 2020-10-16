@@ -60,13 +60,14 @@ void mousePressed() {
  if(mouseButton==LEFT){//insert a new box
     Boid b = new Boid(box2d, cs, bd, P2W(mouseX, mouseY));
     boids.add(b);     
-    /* your code*/
-    
+    Vec2 force = new Vec2(random(-5,5), random(-5,5));
+    b.applyForce(force.mul(10000));
   }
   if(mouseButton==RIGHT){
     Vec2 force;
     for(Boid b: boids){
-      /* your code*/
+      force = (new Vec2(random(-5,5), random(-5,5)));
+      b.applyForce(force.mul(10000));
     }
   }
 }

@@ -47,9 +47,14 @@ PVector computeGravityForce(AgentMover mover){
 
 
 int changeAmp(int i){
-  // your code
-  // return a value of gray
-  return 250;
+  PVector attr_force=pos_attractor.copy();
+  attr_force.sub(movers[i].position);
+  float dist=attr_force.mag();
+  
+  float amp = max(1/(1+0.01*dist), 0.02);
+  samples[i].amp(amp);
+  
+  return int(amp*255);
 }
 void draw(){
   //pos_repeller.set(mouseX, mouseY);
