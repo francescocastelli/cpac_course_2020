@@ -140,7 +140,7 @@ if __name__=="__main__":
         samples=[]
         grammars=[]# your grammars
         gains = [] #your gains
-	    fn_out="multitrack.wav"
+        fn_out="multitrack.wav"
         Gs=[]  #list of Grammar_Sequence
         Cs=[]  #list of Composer
         SR=16000 # use a common sr
@@ -152,5 +152,5 @@ if __name__=="__main__":
         C= Composer("sounds/D4cymb19.wav")
         C.create_sequence(G.sequence)
         C.write("out/"+fn_out)
-    else:
-        write_mix(Cs, "out/multitrack.wav", gains=gains)
+    else:        
+        write_mix(Cs, gains=gains, fn_out="out/multitrack.wav")
