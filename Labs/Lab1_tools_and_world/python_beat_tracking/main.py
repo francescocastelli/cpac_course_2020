@@ -17,14 +17,14 @@ import utils
 DATA_DIR="../../../data"
 assert os.path.exists(DATA_DIR), "wrong data dir"
 # %% Define filenames
-filename_in=os.path.join(DATA_DIR, "wdym.mp3") # put whatever you like
+filename_in=os.path.join(DATA_DIR, "clap.mp3") # put whatever you like
 filename_clap=os.path.join(DATA_DIR, "clap.mp3") # put whatever you like
 filename_out=os.path.join(DATA_DIR, "wdym_claps.wav") # 
 
 # %% Load input file
 
 SR=16000
-y, sr= load(filename_in, sr=SR)
+y, sr=librosa.load(filename_in, sr=SR)
 t=np.arange(y.size)/SR
 # %% 1) Compute beats
 bpm, beats=your_code.compute_beats(y, sr=SR)

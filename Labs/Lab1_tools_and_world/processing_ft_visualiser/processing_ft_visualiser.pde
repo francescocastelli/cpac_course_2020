@@ -35,7 +35,8 @@ void setup()
 void draw(){
   fill(0);
   rect(0,0,width, height);
-    if(song_mic){
+  
+  if(song_mic){
     feat.reasoning(song.mix);
   }
   else{
