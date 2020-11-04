@@ -17,7 +17,7 @@ void draw() {
   // Start the tree from the bottom of the screen
   translate(width/2, height);
   stroke(0);
-  branch(200,0);
+  branch(100,0);
   save("chapter08_exc06.png");
   noLoop();
 }
@@ -37,7 +37,7 @@ void branch(float len, int level) {
   level++;
   // All recursive functions must have an exit condition!!!!
   // Here, ours is when the length of the branch is 2 pixels or less
-  if (level < 5) {
+  if (level < 25) { //number of times a recall the function branch 
     pushMatrix();    // Save the current state of transformation (i.e. where are we now)
     rotate(theta);   // Rotate by theta
     branch(len,level);       // Ok, now call myself to draw two new branches!!
@@ -46,7 +46,10 @@ void branch(float len, int level) {
     // Repeat the same thing, only branch off to the "left" this time!
     pushMatrix();
     rotate(-theta);
-    branch(len,level);
+    branch(len,level);   //recursion 
     popMatrix();
   }
 }
+
+// pushMatrix store the current transformation on the stack, popMatrix will pop the last location on the stack and recall the previous one
+//basically are used to store and restore the coordinate system
