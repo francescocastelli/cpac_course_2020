@@ -20,15 +20,15 @@ def run_avg(image, a_weight):
 # Segment region of hand in the image
 
 def segment(image, threshold=25):
-    global bg
+    global bg #model of the background
 
     # Find the absolute difference between background and current image
     # FILL THE CODE
-    # diff = cv2.absdiff(bg.astype("uint8"), # ....? )
+    diff = cv2.absdiff(bg.astype("uint8"), image)
     
     # Threshold the diff image so that we get the foreground
     # FILL THE CODE
-    #thresholded = cv2.threshold(# ....?, # ....?, 255, cv2.THRESH_BINARY)[1]
+    thresholded = cv2.threshold(diff, threshold, 255, cv2.THRESH_BINARY)[1]
 
     # get the contours in the thresholded image
 

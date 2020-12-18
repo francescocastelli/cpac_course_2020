@@ -1,6 +1,6 @@
+import numpy as np
 import cv2
 import imutils
-import numpy as np
 import argparse
 import os
 from pythonosc import udp_client
