@@ -56,6 +56,6 @@ def detect_palm_center(segmented):
     extreme_right = tuple(chull[chull[:, :, 0].argmax()][0])[0]
 
     # Find the center of the palm
-    #c_x = # FILL THE CODE
-    #c_y = # FILL THE CODE 
+    c_x = int((extreme_left+extreme_right)/2)
+    c_y = int((extreme_top+extreme_bottom)/2)
     return c_x, c_y
